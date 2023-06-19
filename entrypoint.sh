@@ -42,6 +42,9 @@ firebase \
         ${RELEASE_NOTES:+ --release-notes "${RELEASE_NOTES}"} \
         ${INPUT_RELEASENOTESFILE:+ --release-notes-file "${RELEASE_NOTES_FILE}"} \
         $( (( $INPUT_DEBUG )) && printf %s '--debug' )
+        
+echo $?
+echo "Exit Code ^"
 
 if [ -n "${INPUT_TOKEN}" ] ; then
     echo ${TOKEN_DEPRECATED_WARNING_MESSAGE}
