@@ -43,10 +43,10 @@ firebase \
         ${INPUT_RELEASENOTESFILE:+ --release-notes-file "${RELEASE_NOTES_FILE}"} \
         $( (( $INPUT_DEBUG )) && printf %s '--debug' )
         
-firebase_err_code=$? 
-if [ $firebase_err_code -ne 0 ]
+firebase_exit_code=$? 
+if [ $firebase_exit_code -ne 0 ]
 then
-    exit $firebase_err_code
+    exit $firebase_exit_code
 fi
 
 if [ -n "${INPUT_TOKEN}" ] ; then
